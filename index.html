@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062b45">
+<title>Para Graciela | Bajo el mismo mar</title>
+<style>
+:root{--deep:#041a31;--blue:#075071;--aqua:#69d5d0;--foam:#e9ffff;--pink:#ffb5cb}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;display:grid;place-items:center;padding:22px;
+font-family:Georgia,"Times New Roman",serif;color:var(--foam);
+background:radial-gradient(ellipse at 50% 18%,#176b83 0%,#0b4566 36%,#062b45 70%,#031629 100%)}
+.ocean{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.light{position:absolute;top:-20%;left:50%;width:80vw;height:90vh;transform:translateX(-50%);
+background:linear-gradient(115deg,transparent 35%,#9cf6ed12 48%,transparent 60%);
+filter:blur(12px);animation:shimmer 9s ease-in-out infinite alternate}
+@keyframes shimmer{to{transform:translateX(-45%) rotate(8deg);opacity:.55}}
+.wave{position:absolute;left:-10%;width:120%;height:180px;bottom:-85px;border-radius:45% 48% 0 0;
+background:#56c6c4;opacity:.11;animation:wave 12s ease-in-out infinite alternate}
+.wave.two{bottom:-110px;opacity:.13;background:#a5f2e8;animation-duration:17s;animation-direction:alternate-reverse}
+@keyframes wave{to{transform:translateX(4%) translateY(-22px) rotate(2deg)}}
+.stars{position:absolute;inset:0}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#eaffff;box-shadow:0 0 10px #bafcf5;
+opacity:.25;animation:twinkle var(--d) ease-in-out infinite alternate}
+@keyframes twinkle{to{opacity:.95;transform:scale(1.7)}}
+.card{position:relative;z-index:2;width:min(690px,100%);padding:clamp(27px,6vw,55px) 24px 35px;
+text-align:center;border:1px solid #c7ffff38;border-radius:30px;
+background:linear-gradient(145deg,#c9ffff18,#03233b70);box-shadow:0 25px 90px #00101e80,inset 0 1px #ffffff25;
+backdrop-filter:blur(13px);animation:arrive 1.3s ease both}
+@keyframes arrive{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.kicker{font:11px Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#a7eee9}
+h1{font-size:clamp(43px,10vw,72px);font-weight:normal;margin:13px 0 0;color:#f0ffff;text-shadow:0 0 25px #8ce8e1a0}
+.subtitle{font-style:italic;color:#b8e9e8;font-size:17px;margin:7px 0 12px}
+.whale-wrap{height:130px;display:grid;place-items:center;position:relative}
+.whale{width:min(230px,62vw);filter:drop-shadow(0 10px 20px #00131c80);animation:swim 5s ease-in-out infinite}
+@keyframes swim{0%,100%{transform:translateX(-7px) translateY(5px) rotate(-2deg)}50%{transform:translateX(8px) translateY(-7px) rotate(2deg)}}
+.bubble{position:absolute;bottom:12px;width:8px;height:8px;border:1px solid #c7ffff99;border-radius:50%;animation:bubble 4s linear infinite}
+.bubble:nth-child(2){left:25%;animation-delay:1.2s}.bubble:nth-child(3){right:25%;animation-delay:2.4s;width:5px;height:5px}
+@keyframes bubble{to{transform:translateY(-115px);opacity:0}}
+.rule{width:85px;height:1px;margin:15px auto 22px;background:linear-gradient(90deg,transparent,#a8f4e9,transparent)}
+.message{max-width:530px;min-height:155px;margin:0 auto;color:#efffff;font-size:clamp(18px,3.8vw,22px);line-height:1.75}
+.message .highlight{color:#a9f0e9}
+.signature{margin-top:18px;color:#ffd0df;font-style:italic;font-size:20px;opacity:0;animation:fade 1.5s 8s forwards}
+@keyframes fade{to{opacity:1}}
+button{margin-top:25px;padding:12px 22px;border:1px solid #a9eee6a8;border-radius:30px;color:#f1ffff;
+background:#65d7ce20;font-size:14px;cursor:pointer;transition:.25s}
+button:hover{transform:translateY(-2px);background:#65d7ce42}
+.float{position:absolute;bottom:-35px;color:#b5fff5;opacity:0;animation:rise linear forwards}
+@keyframes rise{10%{opacity:.75}100%{transform:translateY(-110vh) translateX(35px);opacity:0}}
+.note{font:11px Arial,sans-serif;color:#c1e8e780;margin-top:13px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div class="ocean">
+ <div class="light"></div><div class="stars" id="stars"></div>
+ <div class="wave"></div><div class="wave two"></div>
+</div>
+<main class="card">
+ <div class="kicker">Un mensaje que viaja hasta ti</div>
+ <h1>Graciela</h1>
+ <div class="subtitle">Hay amores tan inmensos como el océano</div>
+ <div class="whale-wrap" aria-label="Ballena nadando bajo el mar">
+  <svg class="whale" viewBox="0 0 320 170" role="img" aria-label="Ilustración de una ballena azul">
+   <defs><linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b7f4ee"/><stop offset="1" stop-color="#3ba6b4"/></linearGradient></defs>
+   <path d="M38 88 C48 40 111 25 183 47 C218 57 240 77 263 79 C282 81 294 65 307 52 C304 78 293 96 275 106 C294 119 304 134 306 151 C284 133 266 126 246 128 C213 151 165 151 116 135 C76 122 48 111 38 88Z" fill="url(#body)" stroke="#d9fffa" stroke-width="2"/>
+   <path d="M104 123 C132 143 172 145 205 132 C179 158 129 159 104 123Z" fill="#e6fffa" opacity=".55"/>
+   <path d="M144 53 C157 34 178 28 194 35 C183 39 174 48 170 59" fill="#72c9cb"/>
+   <circle cx="82" cy="79" r="4" fill="#07364c"/><circle cx="83" cy="78" r="1.3" fill="#fff"/>
+   <path d="M50 102 Q66 111 85 108" fill="none" stroke="#e2fffb" stroke-width="2" stroke-linecap="round"/>
+   <path d="M144 34 Q135 18 146 9 M154 32 Q151 14 165 5" fill="none" stroke="#b7f4ee" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+   <path d="M108 93 Q124 101 137 92" fill="none" stroke="#eaffff" stroke-width="2" opacity=".7"/>
+   <path d="M217 111 Q233 117 242 109" fill="none" stroke="#eaffff" stroke-width="2" opacity=".55"/>
+  </svg>
+  <i class="bubble"></i><i class="bubble"></i><i class="bubble"></i>
+ </div>
+ <div class="rule"></div>
+ <p class="message" id="message"></p>
+ <div class="signature">Con todo mi amor. ❤️</div>
+ <button id="surprise">Un mensajito desde el fondo del mar ✨</button>
+ <div class="note">Hecho especialmente para ti</div>
+</main>
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<85;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*90+'%';s.style.setProperty('--d',(1.5+Math.random()*3)+'s');s.style.animationDelay=(-Math.random()*4)+'s';stars.appendChild(s)}
+const message='Graciela, te amo más de lo que a veces sé expresar con palabras. Como el océano, lo que siento por ti es inmenso y está lleno de profundidad. Quiero que sepas que voy a esforzarme cada día por ti, por nosotros y por todo lo bonito que podemos construir. No prometo ser perfecto, pero sí aprender, crecer, cuidarte y demostrarte con hechos cuánto significas para mí. Quiero seguir navegando a tu lado, incluso cuando el mar no esté en calma, y encontrar siempre la manera de llegar a ti.';
+const target=document.getElementById('message');let i=0;
+function type(){if(i<message.length){target.textContent+=message.charAt(i++);setTimeout(type,35)}}setTimeout(type,900);
+const field=document.querySelector('.ocean');
+function float(){const el=document.createElement('span');el.className='float';el.textContent=['♡','♥','✧','°'][Math.floor(Math.random()*4)];el.style.left=Math.random()*100+'%';el.style.fontSize=(13+Math.random()*22)+'px';const d=7+Math.random()*5;el.style.animationDuration=d+'s';field.appendChild(el);setTimeout(()=>el.remove(),d*1000)}
+setInterval(float,650);for(let n=0;n<10;n++)setTimeout(float,n*300);
+document.getElementById('surprise').addEventListener('click',()=>{target.textContent='Si alguna vez dudas de lo mucho que te amo, recuerda esto: en un océano lleno de caminos, mi corazón siempre encuentra el rumbo hacia ti. Te elijo hoy y quiero seguir eligiéndote cada día. ❤️';for(let n=0;n<22;n++)setTimeout(float,n*70)});
+</script>
+</body>
+</html>
